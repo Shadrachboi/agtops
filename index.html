@@ -1,229 +1,34 @@
-<html lang="en" class="scroll-smooth overflow-x-hidden"><head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AGTOPS Cleaning Services - Professional Cleaning. Spotless Results.</title>
+<title>Digital Agency &amp; Studio Template</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital@0;1&amp;display=swap" rel="stylesheet">
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <style>
-.dot-pattern {
-background-image: radial-gradient(rgb(203 213 225) 2px, transparent 2px);
-background-size: 16px 16px;
-}
 body {
 font-family: 'Inter', sans-serif;
-overflow-x: hidden;
-width: 100%;
-margin: 0;
+background-color: #09090b; /* zinc-950 */
+color: #fafafa; /* zinc-50 */
 }
-html, body { max-width: 100vw; }
-html {
-overflow-x: hidden;
-width: 100%;
+/* Hide scrollbar for a cleaner look in certain sections if needed */
+::-webkit-scrollbar {
+width: 8px;
 }
-img, video { max-width: 100%; height: auto; }
-.font-serif-custom {
-font-family: 'Playfair Display', serif;
+::-webkit-scrollbar-track {
+background: #09090b;
 }
-.reveal {
-opacity: 0;
-transform: translateY(40px);
-transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+::-webkit-scrollbar-thumb {
+background: #27272a;
+border-radius: 4px;
 }
-.reveal.visible {
-opacity: 1;
-transform: translateY(0);
+::-webkit-scrollbar-thumb:hover {
+background: #3f3f46;
 }
-.reveal-left {
-opacity: 0;
-transform: translateX(-40px);
-transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
-.reveal-left.visible {
-opacity: 1;
-transform: translateX(0);
-}
-.reveal-right {
-opacity: 0;
-transform: translateX(40px);
-transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
-.reveal-right.visible {
-opacity: 1;
-transform: translateX(0);
-}
-.reveal-scale {
-opacity: 0;
-transform: scale(0.9);
-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.reveal-scale.visible {
-opacity: 1;
-transform: scale(1);
-}
-@keyframes fadeInUp {
-from { opacity: 0; transform: translateY(20px); }
-to { opacity: 1; transform: translateY(0); }
-}
-.animate-fade-in-up {
-animation: fadeInUp 0.6s ease-out forwards;
-}
-.quote-modal {
-display: none;
-}
-.quote-modal.open {
-display: flex;
-}
-.quote-modal .modal-overlay {
-position: fixed;
-inset: 0;
-background: rgba(0,0,0,0.6);
-backdrop-filter: blur(4px);
-z-index: 999;
-}
-.quote-modal .modal-content {
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background: white;
-border-radius: 20px;
-padding: 1.5rem;
-max-width: 400px;
-width: calc(100% - 1.5rem);
-max-height: 85vh;
-overflow-y: auto;
-z-index: 1000;
-box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-}
-/* Floating WhatsApp */
-.whatsapp-float {
-position: fixed;
-bottom: 24px;
-right: 24px;
-z-index: 900;
-}
-.whatsapp-float .wa-btn {
-width: 56px;
-height: 56px;
-border-radius: 50%;
-background: #2563eb;
-color: white;
-border: none;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 4px 20px rgba(37,99,235,0.4);
-transition: all 0.3s ease;
-position: relative;
-}
-.whatsapp-float .wa-btn:hover {
-transform: scale(1.08);
-box-shadow: 0 6px 28px rgba(37,99,235,0.55);
-}
-.whatsapp-float .wa-btn .pulse {
-position: absolute;
-inset: 0;
-border-radius: 50%;
-border: 3px solid #2563eb;
-animation: waPulse 2s infinite;
-}
-@keyframes waPulse {
-0% { transform: scale(1); opacity: 1; }
-100% { transform: scale(1.4); opacity: 0; }
-}
-.whatsapp-chat {
-position: absolute;
-bottom: 72px;
-right: 0;
-width: 320px;
-max-width: calc(100vw - 2rem);
-background: white;
-border-radius: 20px;
-box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-overflow: hidden;
-display: none;
-transform-origin: bottom right;
-}
-.whatsapp-chat.open {
-display: block;
-animation: chatSlideIn 0.3s ease-out;
-}
-@keyframes chatSlideIn {
-from { opacity: 0; transform: translateY(20px) scale(0.95); }
-to { opacity: 1; transform: translateY(0) scale(1); }
-}
-.whatsapp-chat .chat-header {
-background: #2563eb;
-padding: 16px 20px;
-display: flex;
-align-items: center;
-gap: 12px;
-}
-.whatsapp-chat .chat-header .avatar {
-width: 40px;
-height: 40px;
-border-radius: 50%;
-background: #eab308;
-display: flex;
-align-items: center;
-justify-content: center;
-color: white;
-flex-shrink: 0;
-}
-.whatsapp-chat .chat-header .info h4 {
-color: white;
-font-size: 14px;
-font-weight: 600;
-}
-.whatsapp-chat .chat-header .info span {
-color: rgba(255,255,255,0.7);
-font-size: 11px;
-}
-.whatsapp-chat .chat-body {
-padding: 20px;
-background: #EFF6FF;
-min-height: 100px;
-}
-.whatsapp-chat .chat-body .bubble {
-background: white;
-padding: 14px 18px;
-border-radius: 8px 16px 16px 16px;
-box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-max-width: 90%;
-font-size: 13px;
-color: #303030;
-line-height: 1.5;
-}
-.whatsapp-chat .chat-body .bubble .time {
-display: block;
-font-size: 10px;
-color: #999;
-text-align: right;
-margin-top: 6px;
-}
-.whatsapp-chat .chat-footer {
-padding: 12px 16px;
-border-top: 1px solid #f0f0f0;
-}
-.whatsapp-chat .chat-footer a {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
-width: 100%;
-padding: 12px;
-border-radius: 30px;
-background: #2563eb;
-color: white;
-font-size: 14px;
-font-weight: 600;
-text-decoration: none;
-transition: background 0.2s;
-}
-.whatsapp-chat .chat-footer a:hover {
-background: #1d4ed8;
+/* Custom selection color */
+::selection {
+background-color: #27272a; /* zinc-800 */
+color: #fafafa;
 }
 </style><!-- aura-ga4-start -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2M6V79H761"></script>
@@ -235,1007 +40,392 @@ gtag('config', 'G-2M6V79H761');
 </script>
 <!-- aura-ga4-end -->
 </head>
-<body class="bg-[#FAFAFA] text-gray-900 antialiased overflow-x-hidden selection:bg-yellow-200 selection:text-gray-900">
+<body class="antialiased min-h-screen flex flex-col font-light selection:bg-zinc-800 selection:text-zinc-50 relative">
+
+<!-- Background (image) added by Aura -->
+<div class="fixed top-0 w-full h-screen bg-cover bg-center -z-10" style="background-image: url(&quot;https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/64c28d7e-2531-485b-8b49-c07d75acae5d_3840w.webp&quot;);; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)" data-alpha-mask="80"></div>
+
+
+
+
+
+
+
+
+<div class="aura-background-component top-0 w-full h-screen -z-10 absolute" data-alpha-mask="80" style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)"><div class="aura-background-component top-0 w-full -z-10 absolute h-full">
+  <div data-us-project="tPmIIl0vKqHO9yqmtge2" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+  <script type="text/javascript">
+    !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+  </script>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Ambient Background Glow -->
+    <div class="absolute top-0 inset-x-0 h-screen overflow-hidden -z-10 pointer-events-none flex justify-center">
+        <div class="w-full max-w-lg aspect-square bg-zinc-800/20 rounded-full blur-3xl opacity-50 translate-y-[-50%]"></div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-gray-100" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex items-center gap-3 cursor-pointer">
-                    <div class="relative w-8 h-8 flex flex-col items-center justify-center">
-                        <div class="w-6 h-6 bg-yellow-400 rounded-full absolute top-0 z-10"></div>
-                        <div class="w-4 h-4 bg-blue-600 rotate-45 absolute bottom-0 z-0"></div>
-                    </div>
-                    <div class="flex flex-col leading-none">
-                        <span class="text-lg font-semibold tracking-tight text-gray-900">AGTOPS</span>
-                        <span class="text-xs font-medium tracking-widest text-blue-600 uppercase mt-0.5">Cleaning</span>
-                    </div>
-                </div>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#how-it-works" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">How it works</a>
-                    <a href="#services" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">Services</a>
-                    <a href="#why-us" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">Why Us</a>
-                    <a href="#faq" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">FAQ</a>
-                </div>
-
-                <!-- CTA & Mobile Toggle -->
-                <div class="flex items-center space-x-4">
-                    <a href="#" onclick="openQuoteModal(); return false;" class="hidden md:flex items-center justify-center px-6 py-2.5 rounded-full bg-blue-600 text-white text-base font-medium hover:bg-blue-700 transition-colors group">
-                        Get a free quote
-                        <i data-lucide="sparkles" class="w-4 h-4 ml-2 text-yellow-300 group-hover:scale-110 transition-transform duration-500" stroke-width="1.5"></i>
-                    </a>
-                    <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 transition-colors">
-                        <i data-lucide="menu" class="w-5 h-5" stroke-width="1.5"></i>
-                    </button>
-                </div>
+    <header class="sticky top-0 z-50 w-full border-b border-zinc-900 bg-zinc-950/80 backdrop-blur-md">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="#" class="text-xl font-medium tracking-tighter text-zinc-100 flex items-center gap-1">ImpossibleWEB</a>
             </div>
-        </div>
-    </nav>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm text-zinc-400">
+                <a href="#services" class="hover:text-zinc-100 transition-colors">Services</a>
+                <a href="#work" class="hover:text-zinc-100 transition-colors">Work</a>
+                <a href="#about" class="hover:text-zinc-100 transition-colors">About</a>
+                <a href="#contact" class="hover:text-zinc-100 transition-colors">Contact</a>
+            </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 hidden flex-col pt-24 px-6 pb-6">
-        <div class="flex flex-col space-y-6 text-center">
-            <a href="#how-it-works" class="text-2xl font-medium text-gray-900 tracking-tight mobile-link">How it works</a>
-            <a href="#services" class="text-2xl font-medium text-gray-900 tracking-tight mobile-link">Services</a>
-            <a href="#why-us" class="text-2xl font-medium text-gray-900 tracking-tight mobile-link">Why Us</a>
-            <a href="#faq" class="text-2xl font-medium text-gray-900 tracking-tight mobile-link">FAQ</a>
-            <div class="pt-8">
-                <a href="#" onclick="openQuoteModal(); return false;" class="flex items-center justify-center w-full px-6 py-4 rounded-full bg-blue-600 text-white text-lg font-medium">
-                    Get a free quote
-                    <i data-lucide="sparkles" class="w-5 h-5 ml-2 text-yellow-300" stroke-width="1.5"></i>
+            <div class="flex items-center gap-4">
+                <a href="#" class="hidden md:flex text-sm text-zinc-300 hover:text-zinc-100 transition-colors">Sign in</a>
+                <a href="#contact" class="px-4 py-2 text-sm font-medium bg-zinc-100 text-zinc-950 rounded-md hover:bg-zinc-200 transition-colors">
+                    Start Project
                 </a>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+            <div class="container mx-auto px-6 text-center flex flex-col items-center">
                 
-                <!-- Left Column: Content -->
-                <div class="w-full lg:w-1/2 flex flex-col items-start text-left lg:pr-12">
-                    <span class="text-blue-600 font-semibold tracking-widest text-sm uppercase mb-6 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-                        Professional cleaning. Spotless results.
-                    </span>
-                    
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] font-medium tracking-tight text-gray-900 mb-6">
-                        Your space, <span class="font-serif-custom italic font-normal text-blue-600">impeccably clean.</span>
-                    </h1>
-                    
-                    <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-lg leading-relaxed font-light">
-                        Standard &amp; deep cleaning services — one-time, weekly, bi-weekly, or monthly. We bring the sparkle so you can focus on what matters.
-                    </p>
-                    
-                    <a href="#" onclick="openQuoteModal(); return false;" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 text-white text-lg font-medium hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group">
-                        Get your free quote
-                        <i data-lucide="arrow-right" class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" stroke-width="1.5"></i>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/50 text-xs text-zinc-400 mb-8 backdrop-blur-sm">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                    Accepting new projects for Q4
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-medium tracking-tight text-zinc-100 max-w-4xl leading-tight mb-6">
+                    We build digital experiences that drive measurable growth.
+                </h1>
+                
+                <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mb-10 font-light">
+                    Premium web development, technical SEO, and workflow automation for modern e-commerce and fast-growing tech brands.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                    <a href="#contact" class="w-full sm:w-auto px-6 py-3 text-sm font-medium bg-zinc-100 text-zinc-950 rounded-md hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2">
+                        Book Consultation
+                        <iconify-icon icon="solar:arrow-right-linear" style="stroke-width: 1.5;"></iconify-icon>
                     </a>
-
-                    <!-- Social Proof -->
-                    <div class="mt-12 flex items-center gap-4">
-                        <div class="flex -space-x-3">
-                            <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="Customer avatar">
-                            <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg" alt="Customer avatar">
-                            <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg" alt="Customer avatar">
-                            <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5bab247f-35d9-400d-a82b-fd87cfe913d2_1600w.webp" alt="Customer avatar">
-                        </div>
-                        <div class="flex flex-col">
-                            <div class="flex items-center gap-1 text-yellow-400">
-                                <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                            </div>
-                            <span class="text-sm font-medium text-gray-500 mt-0.5">
-                                <span class="text-gray-900">4.9/5</span> from 2,500+ happy clients
-                            </span>
-                        </div>
-                    </div>
+                    <a href="#work" class="w-full sm:w-auto px-6 py-3 text-sm font-medium bg-transparent border border-zinc-800 text-zinc-300 rounded-md hover:bg-zinc-900 hover:text-zinc-100 transition-colors flex items-center justify-center gap-2">
+                        View Portfolio
+                    </a>
                 </div>
 
-                <!-- Right Column: Image & Graphics -->
-                <div class="w-full lg:w-1/2 relative mt-16 lg:mt-0">
-                    <!-- Background Shapes -->
-                    <div class="absolute top-0 right-10 w-64 h-[28rem] bg-blue-100/60 rounded-t-full -z-10 blur-2xl lg:blur-none"></div>
-                    <div class="absolute bottom-10 -left-10 w-40 h-40 bg-yellow-400 rounded-full -z-10"></div>
-                    <div class="absolute top-1/2 -left-12 w-24 h-24 dot-pattern -z-10 opacity-60"></div>
-
-                    <!-- Main Image -->
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-200/50 aspect-[4/3] lg:aspect-auto lg:h-[600px] w-full">
-                        <video autoplay loop muted playsinline class="object-cover w-full h-full" poster="https://cdn.pixabay.com/video/2026/02/28/337259_tiny.jpg">
-                            <source src="https://cdn.pixabay.com/video/2026/02/28/337259_large.mp4" type="video/mp4">
-                        </video>
+                <!-- Trust Logos (Abstracted) -->
+                <div class="mt-24 pt-10 border-t border-zinc-900 w-full max-w-5xl">
+                    <p class="text-xs text-zinc-500 mb-6 uppercase tracking-widest text-center">Trusted by innovative teams</p>
+                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale">
+                        <span class="text-xl font-medium tracking-tighter text-zinc-400 flex items-center gap-1"><iconify-icon icon="solar:box-linear"></iconify-icon> ACME</span>
+                        <span class="text-xl font-medium tracking-tighter text-zinc-400 flex items-center gap-1"><iconify-icon icon="solar:infinity-linear"></iconify-icon> GLOBAL</span>
+                        <span class="text-xl font-medium tracking-tighter text-zinc-400 flex items-center gap-1"><iconify-icon icon="solar:planet-linear"></iconify-icon> SPHERE</span>
+                        <span class="text-xl font-medium tracking-tighter text-zinc-400 flex items-center gap-1"><iconify-icon icon="solar:triangle-linear"></iconify-icon> APEX</span>
+                        <span class="text-xl font-medium tracking-tighter text-zinc-400 flex items-center gap-1 hidden md:flex"><iconify-icon icon="solar:hexagon-linear"></iconify-icon> NEXUS</span>
                     </div>
-
-                    <!-- Floating Card -->
-                    <div class="hidden sm:block absolute -bottom-6 md:-bottom-8 left-2 md:-left-4 lg:-left-12 bg-white/95 backdrop-blur-md p-4 md:p-5 lg:p-8 rounded-xl md:rounded-2xl shadow-xl shadow-gray-200/50 max-w-[200px] md:max-w-xs border border-gray-100 animate-fade-in-up">
-                        <div class="w-10 h-10 md:w-12 rounded-full border border-gray-200 flex items-center justify-center text-blue-600 mb-3 md:mb-5 bg-blue-50/50">
-                            <i data-lucide="sparkles" class="w-4 h-4 md:w-5 md:h-5" stroke-width="1.5"></i>
-                        </div>
-                        <h3 class="text-sm md:text-base lg:text-xl font-medium tracking-tight text-gray-900 mb-1 md:mb-2">Tailored for you</h3>
-                        <p class="text-xs md:text-sm lg:text-base text-gray-500 font-light leading-relaxed">
-                            Custom cleaning plans designed around your home or office needs.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Value Proposition Bar (Blue) -->
-    <div class="relative z-20 mt-12 lg:mt-0">
-        <svg class="w-full h-12 lg:h-20 text-blue-600 fill-current -mb-1" viewBox="0 0 1440 80" preserveAspectRatio="none">
-            <path d="M0,80 C320,0 1120,0 1440,80 L1440,80 L0,80 Z"></path>
-        </svg>
-        <section class="bg-blue-600 py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8 divide-y-0 md:divide-x divide-white/10">
-                <!-- Feature 1 -->
-                <div class="flex flex-col items-center text-center px-2 md:px-4">
-                    <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-yellow-300 mb-6">
-                        <i data-lucide="sparkles" class="w-6 h-6" stroke-width="1.5"></i>
-                    </div>
-                    <h4 class="text-lg font-medium text-white mb-2 tracking-tight">Standard &amp; Deep</h4>
-                    <p class="text-base text-gray-100 font-light">cleaning for every need</p>
-                </div>
-                <!-- Feature 2 -->
-                <div class="flex flex-col items-center text-center pt-8 md:pt-0 px-2 md:px-4">
-                    <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-green-300 mb-6">
-                        <i data-lucide="leaf" class="w-6 h-6" stroke-width="1.5"></i>
-                    </div>
-                    <h4 class="text-lg font-medium text-white mb-2 tracking-tight">Eco-friendly</h4>
-                    <p class="text-base text-gray-100 font-light">safe products for your family</p>
-                </div>
-                <!-- Feature 3 -->
-                <div class="flex flex-col items-center text-center pt-8 md:pt-0 px-2 md:px-4">
-                    <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-yellow-300 mb-6">
-                        <i data-lucide="clock" class="w-6 h-6" stroke-width="1.5"></i>
-                    </div>
-                    <h4 class="text-lg font-medium text-white mb-2 tracking-tight">Flexible scheduling</h4>
-                    <p class="text-base text-gray-100 font-light">weekly, bi-weekly, or monthly</p>
-                </div>
-                <!-- Feature 4 -->
-                <div class="flex flex-col items-center text-center pt-8 md:pt-0 px-2 md:px-4">
-                    <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-yellow-300 mb-6">
-                        <i data-lucide="shield-check" class="w-6 h-6" stroke-width="1.5"></i>
-                    </div>
-                    <h4 class="text-lg font-medium text-white mb-2 tracking-tight">Insured &amp; bonded</h4>
-                    <p class="text-base text-gray-100 font-light">for your peace of mind</p>
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- Section 2: How It Works -->
-    <section id="how-it-works" class="py-16 sm:py-24 lg:py-32 bg-white reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="text-sm font-semibold tracking-widest text-blue-600 uppercase mb-4">The Process</h2>
-                <h3 class="text-4xl md:text-5xl font-medium tracking-tight text-gray-900 mb-6">Simple, transparent, <br><span class="font-serif-custom italic text-blue-600">and hassle-free.</span></h3>
-                <p class="text-lg text-gray-600 font-light">We handle every detail so you can enjoy a spotless space without lifting a finger.</p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 relative">
-                <div class="hidden md:block absolute top-12 left-[10%] right-[10%] h-[1px] bg-gray-200 -z-10"></div>
-
-                <div class="flex flex-col items-center text-center group">
-                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mb-5 md:mb-8 shadow-sm group-hover:scale-110 transition-transform duration-300 bg-white z-10">
-                        <i data-lucide="message-square" class="w-6 h-6 md:w-8 md:h-8 text-blue-600" stroke-width="1.5"></i>
+        <!-- Metrics/Stats Section -->
+        <section class="py-20 border-y border-zinc-900 bg-zinc-950/50">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-zinc-900">
+                    <div class="flex flex-col items-center text-center px-4">
+                        <span class="text-4xl font-medium tracking-tight text-zinc-100 mb-2">120+</span>
+                        <span class="text-sm text-zinc-500">Projects Delivered</span>
                     </div>
-                    <h4 class="text-base md:text-xl font-medium text-gray-900 mb-2 md:mb-3 tracking-tight">1. Consultation</h4>
-                    <p class="text-sm md:text-base text-gray-500 font-light px-2 md:px-4">We discuss your needs and provide a free estimate.</p>
-                </div>
-
-                <div class="flex flex-col items-center text-center group">
-                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mb-5 md:mb-8 shadow-sm group-hover:scale-110 transition-transform duration-300 bg-white z-10">
-                        <i data-lucide="calendar" class="w-6 h-6 md:w-8 md:h-8 text-blue-600" stroke-width="1.5"></i>
+                    <div class="flex flex-col items-center text-center px-4">
+                        <span class="text-4xl font-medium tracking-tight text-zinc-100 mb-2">$50M</span>
+                        <span class="text-sm text-zinc-500">Revenue Generated</span>
                     </div>
-                    <h4 class="text-base md:text-xl font-medium text-gray-900 mb-2 md:mb-3 tracking-tight">2. Schedule</h4>
-                    <p class="text-sm md:text-base text-gray-500 font-light px-2 md:px-4">Pick a date and time that works best for you.</p>
-                </div>
-
-                <div class="flex flex-col items-center text-center group">
-                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mb-5 md:mb-8 shadow-sm group-hover:scale-110 transition-transform duration-300 bg-white z-10">
-                        <i data-lucide="sparkles" class="w-6 h-6 md:w-8 md:h-8 text-blue-600" stroke-width="1.5"></i>
+                    <div class="flex flex-col items-center text-center px-4">
+                        <span class="text-4xl font-medium tracking-tight text-zinc-100 mb-2">98%</span>
+                        <span class="text-sm text-zinc-500">Client Retention</span>
                     </div>
-                    <h4 class="text-base md:text-xl font-medium text-gray-900 mb-2 md:mb-3 tracking-tight">3. Cleaning</h4>
-                    <p class="text-sm md:text-base text-gray-500 font-light px-2 md:px-4">Our pros arrive with top-grade equipment and products.</p>
-                </div>
-
-                <div class="flex flex-col items-center text-center group">
-                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-yellow-50 border border-yellow-100 flex items-center justify-center mb-5 md:mb-8 shadow-sm group-hover:scale-110 transition-transform duration-300 bg-white z-10">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 md:w-8 md:h-8 text-yellow-500" stroke-width="1.5"></i>
+                    <div class="flex flex-col items-center text-center px-4">
+                        <span class="text-4xl font-medium tracking-tight text-zinc-100 mb-2">&lt;2</span>
+                        <span class="text-sm text-zinc-500">Weeks to Launch</span>
                     </div>
-                    <h4 class="text-base md:text-xl font-medium text-gray-900 mb-2 md:mb-3 tracking-tight">4. Satisfaction</h4>
-                    <p class="text-sm md:text-base text-gray-500 font-light px-2 md:px-4">We inspect every detail and ensure you're thrilled.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section 3: Services Ecosystem -->
-    <section id="services" class="py-16 sm:py-24 bg-gray-50/50 border-y border-gray-100 reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div class="max-w-2xl">
-                    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-4">A full range of cleaning services.</h2>
-                    <p class="text-lg text-gray-600 font-light">From standard maintenance to deep cleaning — one-time or on a schedule. We deliver spotless results tailored to your needs.</p>
+        <!-- Services Section -->
+        <section class="py-24 md:py-32" id="services">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mb-16">
+                    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-zinc-100 mb-4">Core capabilities</h2>
+                    <p class="text-lg text-zinc-400">We focus on high-impact services that directly influence your bottom line. No fluff, just results.</p>
                 </div>
-                <a href="#" class="text-base font-medium text-blue-600 flex items-center hover:text-blue-700 transition-colors">
-                    View all services <i data-lucide="arrow-right" class="w-4 h-4 ml-2" stroke-width="1.5"></i>
-                </a>
-            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- Card 1: Standard Cleaning -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow group cursor-pointer reveal-scale">
-                    <div class="h-48 md:h-64 overflow-hidden relative bg-blue-50 flex items-center justify-center p-6 md:p-8">
-                        <div class="text-center">
-                            <i data-lucide="sparkles" class="w-12 h-12 md:w-16 md:h-16 text-blue-600 mx-auto mb-4" stroke-width="1.5"></i>
-                            <span class="text-sm font-semibold text-blue-600 bg-blue-100 px-4 py-1 rounded-full">Standard</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Service Card 1 -->
+                    <div class="group p-8 rounded-2xl border border-zinc-900 bg-zinc-950 hover:bg-zinc-900/50 transition-all duration-300">
+                        <div class="h-12 w-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 mb-6 group-hover:text-zinc-50 group-hover:border-zinc-700 transition-colors">
+                            <iconify-icon icon="solar:code-square-linear" style="stroke-width: 1.5;" class="text-2xl"></iconify-icon>
                         </div>
-                    </div>
-                    <div class="p-6 md:p-8">
-                        <h3 class="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-4">Standard Cleaning</h3>
-                        <p class="text-sm md:text-base text-gray-500 font-light mb-4">Our essential cleaning package for everyday freshness.</p>
-                        <ul class="space-y-2 text-sm text-gray-500 font-light">
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Sweeping &amp; Vacuuming</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Dusting &amp; Mopping</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Emptying trash</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Making the bed</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Cleaning mirrors</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Cleaning sinks &amp; faucets</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Cleaning appliances</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Tidying up the whole house</li>
+                        <h3 class="text-xl font-medium tracking-tight text-zinc-100 mb-3">Custom Web Development</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed mb-6">
+                            Blazing fast, scalable applications built with Next.js, React, and modern serverless architectures tailored to your business logic.
+                        </p>
+                        <ul class="space-y-2 text-sm text-zinc-500">
+                            <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-zinc-700"></iconify-icon> Headless Commerce</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-zinc-700"></iconify-icon> Web Applications</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-zinc-700"></iconify-icon> API Integration</li>
                         </ul>
                     </div>
-                </div>
 
-                <!-- Card 2: Deep Cleaning -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow group cursor-pointer reveal-scale" style="transition-delay: 0.15s;">
-                    <div class="h-48 md:h-64 overflow-hidden relative bg-yellow-50 flex items-center justify-center p-6 md:p-8">
-                        <div class="text-center">
-                            <i data-lucide="layers" class="w-12 h-12 md:w-16 md:h-16 text-yellow-500 mx-auto mb-4" stroke-width="1.5"></i>
-                            <span class="text-sm font-semibold text-yellow-600 bg-yellow-100 px-4 py-1 rounded-full">Deep Cleaning</span>
+                    <!-- Service Card 2 -->
+                    <div class="group p-8 rounded-2xl border border-zinc-900 bg-zinc-950 hover:bg-zinc-900/50 transition-all duration-300">
+                        <div class="h-12 w-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 mb-6 group-hover:text-zinc-50 group-hover:border-zinc-700 transition-colors">
+                            <iconify-icon icon="solar:document-text-linear" style="stroke-width: 1.5;" class="text-2xl"></iconify-icon>
                         </div>
-                    </div>
-                    <div class="p-6 md:p-8">
-                        <h3 class="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-4">Deep Cleaning</h3>
-                        <p class="text-sm md:text-base text-gray-500 font-light mb-4">Thorough deep clean covering every corner of your space.</p>
-                        <ul class="space-y-2 text-sm text-gray-500 font-light">
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Bedrooms</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Living areas</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Kitchens</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Bathroom</li>
+                        <h3 class="text-xl font-medium tracking-tight text-zinc-100 mb-3">High-Converting Landing Pages</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed mb-6">
+                            Pixel-perfect design meets conversion rate optimization. We build landing pages that turn ad clicks into loyal customers.
+                        </p>
+                        <ul class="space-y-2 text-sm text-zinc-500">
+                            <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-zinc-700"></iconify-icon> A/B Testing Setup</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-zinc-700"></iconify-icon> Copywriting Support</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-zinc-700"></iconify-icon> Performance Audits</li>
                         </ul>
                     </div>
-                </div>
 
-                <!-- Card 3: Flexible Scheduling -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow group cursor-pointer reveal-scale" style="transition-delay: 0.3s;">
-                    <div class="h-48 md:h-64 overflow-hidden relative bg-gray-50 flex items-center justify-center p-6 md:p-8">
-                        <div class="text-center">
-                            <i data-lucide="calendar-clock" class="w-12 h-12 md:w-16 md:h-16 text-gray-700 mx-auto mb-4" stroke-width="1.5"></i>
-                            <span class="text-sm font-semibold text-gray-600 bg-gray-200 px-4 py-1 rounded-full">Flexible Schedule</span>
+                    <!-- Service Card 3 -->
+                    <div class="group p-8 rounded-2xl border border-zinc-900 bg-zinc-950 hover:bg-zinc-900/50 transition-all duration-300">
+                        <div class="h-12 w-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 mb-6 group-hover:text-zinc-50 group-hover:border-zinc-700 transition-colors">
+                            <iconify-icon icon="solar:chart-square-linear" style="stroke-width: 1.5;" class="text-2xl"></iconify-icon>
                         </div>
+                        <h3 class="text-xl font-medium tracking-tight text-zinc-100 mb-3">Technical SEO</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed mb-6">
+                            Foundation-first search engine optimization. We fix technical debt, improve site speed, and structure data for maximum visibility.
+                        </p>
+                        <ul class="space-y-2 text-sm text-zinc-500">
+                            <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-zinc-700"></iconify-icon> Core Web Vitals</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-zinc-700"></iconify-icon> Schema Markup</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-zinc-700"></iconify-icon> Crawlability Fixes</li>
+                        </ul>
                     </div>
-                    <div class="p-6 md:p-8">
-                        <h3 class="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-4">Flexible Scheduling</h3>
-                        <p class="text-sm md:text-base text-gray-500 font-light mb-4">Choose a plan that fits your lifestyle:</p>
-                        <ul class="space-y-2 text-sm text-gray-500 font-light">
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> One-time Cleaning</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Weekly Cleaning</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Bi-weekly Cleaning</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 mt-0.5 shrink-0" stroke-width="2"></i> Monthly Cleaning</li>
+
+                    <!-- Service Card 4 -->
+                    <div class="group p-8 rounded-2xl border border-zinc-900 bg-zinc-950 hover:bg-zinc-900/50 transition-all duration-300">
+                        <div class="h-12 w-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 mb-6 group-hover:text-zinc-50 group-hover:border-zinc-700 transition-colors">
+                            <iconify-icon icon="solar:bolt-linear" style="stroke-width: 1.5;" class="text-2xl"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-medium tracking-tight text-zinc-100 mb-3">Workflow Automation</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed mb-6">
+                            Eliminate manual tasks. We design and implement robust automations using n8n and custom webhooks to streamline operations.
+                        </p>
+                        <ul class="space-y-2 text-sm text-zinc-500">
+                            <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-zinc-700"></iconify-icon> CRM Syncing</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-zinc-700"></iconify-icon> Order Processing</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear" class="text-zinc-700"></iconify-icon> Custom n8n Nodes</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section 4: Benefits / Data -->
-    <section id="why-us" class="py-16 sm:py-24 lg:py-32 reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="reveal-left">
-                    <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-gray-900 mb-6">Why choose AGTOPS?</h2>
-                    <p class="text-lg text-gray-600 font-light mb-10 leading-relaxed">
-                        We don't just clean — we transform your space. With trained professionals, eco-friendly products, and a satisfaction guarantee, we deliver results you'll love.
-                    </p>
+        <!-- Case Studies / Credibility Section -->
+        <section id="work" class="py-24 border-t border-zinc-900">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-zinc-100 mb-4">Proven results</h2>
+                        <p class="text-lg text-zinc-400">We measure success by the impact we create. Here is how we've helped our clients scale.</p>
+                    </div>
+                    <a href="#" class="text-sm text-zinc-300 hover:text-zinc-100 flex items-center gap-2 transition-colors pb-2">
+                        View all case studies
+                        <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Case Study 1 -->
+                    <div class="group relative overflow-hidden rounded-2xl border border-zinc-900 bg-zinc-950 aspect-[4/3] flex flex-col justify-between p-8 hover:border-zinc-700 transition-colors">
+                        <div class="absolute inset-0 bg-gradient-to-br from-zinc-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10 flex items-center gap-2 text-zinc-500 text-sm">
+                            <iconify-icon icon="solar:shop-linear"></iconify-icon> E-commerce
+                        </div>
+                        <div class="relative z-10">
+                            <div class="text-4xl font-medium tracking-tight text-emerald-400 mb-2">+45%</div>
+                            <h3 class="text-lg font-medium text-zinc-100 mb-2">Conversion Rate Increase</h3>
+                            <p class="text-sm text-zinc-400">Complete headless Shopify migration and checkout optimization for a D2C apparel brand.</p>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2 -->
+                    <div class="group relative overflow-hidden rounded-2xl border border-zinc-900 bg-zinc-950 aspect-[4/3] flex flex-col justify-between p-8 hover:border-zinc-700 transition-colors">
+                        <div class="absolute inset-0 bg-gradient-to-br from-zinc-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10 flex items-center gap-2 text-zinc-500 text-sm">
+                            <iconify-icon icon="solar:server-square-linear"></iconify-icon> SaaS
+                        </div>
+                        <div class="relative z-10">
+                            <div class="text-4xl font-medium tracking-tight text-blue-400 mb-2">2.5x</div>
+                            <h3 class="text-lg font-medium text-zinc-100 mb-2">Organic Traffic Growth</h3>
+                            <p class="text-sm text-zinc-400">Technical SEO overhaul and programmatic content generation structure implementation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 3 -->
+                    <div class="group relative overflow-hidden rounded-2xl border border-zinc-900 bg-zinc-950 aspect-[4/3] flex flex-col justify-between p-8 hover:border-zinc-700 transition-colors">
+                        <div class="absolute inset-0 bg-gradient-to-br from-zinc-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10 flex items-center gap-2 text-zinc-500 text-sm">
+                            <iconify-icon icon="solar:settings-linear"></iconify-icon> Logistics
+                        </div>
+                        <div class="relative z-10">
+                            <div class="text-4xl font-medium tracking-tight text-purple-400 mb-2">120h</div>
+                            <h3 class="text-lg font-medium text-zinc-100 mb-2">Saved Monthly</h3>
+                            <p class="text-sm text-zinc-400">Custom n8n automation pipeline bridging legacy ERP systems with modern dispatch tools.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Capture / CTA Section -->
+        <section id="contact" class="py-24 md:py-32 relative overflow-hidden">
+            <div class="absolute inset-0 bg-zinc-900/20 border-y border-zinc-800/50"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto rounded-3xl border border-zinc-800 bg-zinc-950/80 backdrop-blur-xl p-8 md:p-12 shadow-2xl flex flex-col md:flex-row gap-12">
                     
-                    <div class="space-y-8">
-                        <div class="flex gap-4">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                                    <i data-lucide="users" class="w-4 h-4" stroke-width="2"></i>
+                    <div class="flex-1">
+                        <h2 class="text-3xl font-medium tracking-tight text-zinc-100 mb-4">Ready to scale?</h2>
+                        <p class="text-sm text-zinc-400 mb-8">Tell us about your project. We typically respond within 24 hours to schedule a discovery call and provide a detailed proposal.</p>
+                        
+                        <div class="space-y-4 text-sm text-zinc-300">
+                            <div class="flex items-start gap-3">
+                                <iconify-icon icon="solar:check-circle-linear" class="text-zinc-500 mt-0.5 text-base"></iconify-icon>
+                                <span>Direct access to senior developers &amp; strategists</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <iconify-icon icon="solar:check-circle-linear" class="text-zinc-500 mt-0.5 text-base"></iconify-icon>
+                                <span>Transparent pricing and timeline estimates</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <iconify-icon icon="solar:check-circle-linear" class="text-zinc-500 mt-0.5 text-base"></iconify-icon>
+                                <span class="">No commitment required for initial consultation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 w-full">
+                        <form class="space-y-4" onsubmit="event.preventDefault();">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="space-y-1.5">
+                                    <label class="text-xs font-medium text-zinc-400 px-1">Name</label>
+                                    <input type="text" placeholder="John Doe" class="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-zinc-600 focus:bg-zinc-900 transition-colors">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-xs font-medium text-zinc-400 px-1">Work Email</label>
+                                    <input type="email" placeholder="john@company.com" class="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-zinc-600 focus:bg-zinc-900 transition-colors">
                                 </div>
                             </div>
-                            <div>
-                                <h4 class="text-xl font-medium text-gray-900 mb-1">Trained professionals</h4>
-                                <p class="text-base text-gray-500 font-light">Every cleaner is background-checked, insured, and rigorously trained.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                                    <i data-lucide="leaf" class="w-4 h-4" stroke-width="2"></i>
+                            
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-medium text-zinc-400 px-1">Project Type</label>
+                                <div class="relative">
+                                    <select class="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-zinc-100 appearance-none focus:outline-none focus:border-zinc-600 focus:bg-zinc-900 transition-colors cursor-pointer">
+                                        <option value="" disabled="" selected="" class="text-zinc-600">Select an area of interest...</option>
+                                        <option value="web">Web Development</option>
+                                        <option value="seo">Technical SEO</option>
+                                        <option value="automation">Workflow Automation</option>
+                                        <option value="other">Other / General Inquiry</option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-zinc-500">
+                                        <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+                                    </div>
                                 </div>
                             </div>
-                            <div>
-                                <h4 class="text-xl font-medium text-gray-900 mb-1">Eco-friendly products</h4>
-                                <p class="text-base text-gray-500 font-light">We use non-toxic, biodegradable cleaning solutions safe for kids and pets.</p>
+
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-medium text-zinc-400 px-1">Brief Details</label>
+                                <textarea rows="3" placeholder="Tell us about your goals and current challenges..." class="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-zinc-600 focus:bg-zinc-900 transition-colors resize-none"></textarea>
                             </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
-                                    <i data-lucide="shield-check" class="w-4 h-4" stroke-width="2"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-medium text-gray-900 mb-1">100% Satisfaction</h4>
-                                <p class="text-base text-gray-500 font-light">If you're not happy, we'll re-clean for free. No questions asked.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Interactive Stats Component -->
-                <div class="bg-blue-600 rounded-3xl p-8 lg:p-12 text-white shadow-2xl relative overflow-hidden reveal-right">
-                    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-50"></div>
-                    
-                    <h3 class="text-xl md:text-2xl font-medium tracking-tight mb-6 md:mb-8 relative z-10">Our Impact by the Numbers</h3>
-                    
-                    <div class="grid grid-cols-2 gap-6 md:gap-8 relative z-10">
-                        <div>
-                            <div class="text-3xl md:text-5xl font-medium text-yellow-300 mb-1 md:mb-2 tracking-tight"><span class="counter" data-target="10">0</span>k+</div>
-                            <div class="text-sm font-medium text-blue-100 uppercase tracking-wide">Homes Cleaned</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl md:text-5xl font-medium text-yellow-300 mb-1 md:mb-2 tracking-tight"><span class="counter" data-target="98">0</span>%</div>
-                            <div class="text-[10px] md:text-sm font-medium text-blue-100 uppercase tracking-wide">Satisfaction Rate</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl md:text-5xl font-medium text-white mb-1 md:mb-2 tracking-tight"><span class="counter" data-target="500">0</span>+</div>
-                            <div class="text-[10px] md:text-sm font-medium text-blue-100 uppercase tracking-wide">Business Clients</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl md:text-5xl font-medium text-white mb-1 md:mb-2 tracking-tight"><span class="counter" data-target="49" data-precision="1">0.0</span></div>
-                            <div class="text-[10px] md:text-sm font-medium text-blue-100 uppercase tracking-wide">Average Rating</div>
-                        </div>
+                            <button type="submit" class="w-full py-3 mt-2 text-sm font-medium bg-zinc-100 text-zinc-950 rounded-lg hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2">
+                                Request Proposal
+                                <iconify-icon icon="solar:plain-2-linear" style="stroke-width: 1.5;"></iconify-icon>
+                            </button>
+                        </form>
                     </div>
 
-                    <div class="mt-6 md:mt-12 pt-6 md:pt-8 border-t border-blue-500 relative z-10">
-                        <div class="flex items-center justify-between">
-                            <span class="text-base text-blue-100">Service area: Greater metro region.</span>
-                            <a href="#" onclick="openQuoteModal(); return false;" class="text-base font-medium text-white hover:text-yellow-300 transition-colors flex items-center">
-                                Book now <i data-lucide="arrow-right" class="w-4 h-4 ml-1" stroke-width="1.5"></i>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Section 5: Quality Promise -->
-    <section class="relative h-[50vh] md:h-[70vh] lg:h-[80vh] min-h-[400px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 w-full h-full">
-            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg" alt="Clean home interior" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gray-900/60 mix-blend-multiply"></div>
-        </div>
-        
-        <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-6">Clean you can feel.</h2>
-            <p class="text-base sm:text-lg md:text-xl text-gray-200 font-light mb-10 max-w-2xl mx-auto">Our meticulous process ensures every surface is sanitized, every corner is dust-free, and every room feels refreshed.</p>
-            <div class="flex flex-wrap justify-center gap-6">
-                <div class="flex items-center text-white/90 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-green-400" stroke-width="1.5"></i>
-                    <span class="text-base font-medium">Sanitized surfaces</span>
-                </div>
-                <div class="flex items-center text-white/90 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-green-400" stroke-width="1.5"></i>
-                    <span class="text-base font-medium">Allergen removal</span>
-                </div>
-                <div class="flex items-center text-white/90 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-green-400" stroke-width="1.5"></i>
-                    <span class="text-base font-medium">Streak-free shine</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 6: Pricing Calculator Mockup -->
-    <section id="quote" class="py-16 sm:py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-4">See your estimated cost.</h2>
-                <p class="text-lg text-gray-600 font-light">Select your property type to see our price range.</p>
-            </div>
-
-            <div class="bg-white rounded-3xl border border-gray-200 shadow-xl shadow-gray-100 p-6 sm:p-8 md:p-12">
-                <div class="mb-10">
-                    <div class="flex justify-between items-end mb-6">
-                        <label class="text-base font-medium text-gray-700">Property Type</label>
-                        <div class="text-xl font-medium tracking-tight text-gray-900 bg-gray-50 px-4 py-1.5 rounded-lg border border-gray-100" id="type-display">2-Bedroom</div>
-                    </div>
-                    
-                    <div class="relative w-full h-2 bg-gray-200 rounded-full outline-none">
-                        <div class="absolute top-0 left-0 h-full bg-blue-600 rounded-full w-[20%]" id="slider-fill"></div>
-                        <input type="range" min="1" max="6" step="1" value="2" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer" id="prop-slider">
-                        <div class="absolute top-1/2 -mt-3 w-6 h-6 bg-white border-2 border-blue-600 rounded-full shadow-md pointer-events-none left-[20%] -ml-3 transition-all duration-75" id="slider-thumb"></div>
-                    </div>
-                    <div class="flex justify-between mt-2 text-xs font-medium text-gray-400">
-                        <span>Studio</span>
-                        <span>Estate</span>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 border-t border-gray-100 pt-8">
-                    <div class="bg-gray-50 rounded-2xl p-5 sm:p-6 border border-gray-100">
-                        <div class="text-sm font-medium text-gray-500 mb-3 uppercase tracking-wide">Cleaning Type</div>
-                        <div class="relative">
-                            <select id="clean-type" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-lg font-medium text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors appearance-none cursor-pointer">
-                                <option value="standard">Standard Cleaning</option>
-                                <option value="deep">Deep Cleaning</option>
-                            </select>
-                            <div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-gray-400">
-                                <i data-lucide="chevron-down" class="w-4 h-4" stroke-width="1.5"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-blue-600 rounded-2xl p-5 sm:p-6 text-white shadow-lg">
-                        <div class="text-sm font-medium text-blue-200 mb-2 uppercase tracking-wide">Price Range</div>
-                        <div class="text-xl md:text-2xl font-medium tracking-tight text-yellow-300" id="est-price">₦25,000 - ₦40,000</div>
-                    </div>
-                </div>
-                
-                <div class="mt-10 text-center">
-                    <button onclick="openQuoteModal()" class="px-8 py-4 rounded-full bg-blue-600 text-white text-lg font-medium hover:bg-blue-700 transition-colors w-full md:w-auto">
-                        Get your detailed quote
-                    </button>
-                    <p class="text-sm text-gray-500 mt-4 font-light">Final pricing may vary based on specific requirements and add-on services.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 7: Testimonials -->
-    <section class="py-16 sm:py-24 bg-gray-50 reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 md:mb-16">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-gray-900 mb-4">Don't just take our word for it.</h2>
-                <p class="text-lg text-gray-600 font-light">Join thousands of happy clients who trust AGTOPS for their cleaning needs.</p>
-            </div>
-
-            <div id="testimonial-track" class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth pb-2 md:pb-0 w-full min-w-0" style="-webkit-overflow-scrolling: touch; scrollbar-width: none;">
-                <div class="testimonial-item bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm flex-[0_0_80vw] md:flex-none snap-start">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                    </div>
-                    <p class="text-base text-gray-700 font-light mb-6 line-clamp-4">"AGTOPS transformed our home. The team was punctual, thorough, and left every room sparkling. I've never been happier with a cleaning service!"</p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg" alt="Sarah J." class="w-10 h-10 rounded-full object-cover">
-                        <div>
-                            <div class="text-base font-medium text-gray-900">Sarah Jenkins</div>
-                            <div class="text-sm text-gray-500">Austin, TX</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-item bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm flex-[0_0_80vw] md:flex-none snap-start">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                    </div>
-                    <p class="text-base text-gray-700 font-light mb-6 line-clamp-4">"I run a busy dental office and AGTOPS keeps our practice spotless. Their commercial service is top-notch — very professional and reliable."</p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg" alt="Michael R." class="w-10 h-10 rounded-full object-cover">
-                        <div>
-                            <div class="text-base font-medium text-gray-900">Michael Ross</div>
-                            <div class="text-sm text-gray-500">Denver, CO</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-item bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm flex-[0_0_80vw] md:flex-none snap-start">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current" stroke-width="1.5"></i>
-                    </div>
-                    <p class="text-base text-gray-700 font-light mb-6 line-clamp-4">"The deep cleaning service was incredible. They got into every nook and cranny. Our house felt brand new. Worth every penny!"</p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="Elena M." class="w-10 h-10 rounded-full object-cover">
-                        <div>
-                            <div class="text-base font-medium text-gray-900">Elena Martinez</div>
-                            <div class="text-sm text-gray-500">Phoenix, AZ</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex justify-center gap-2 mt-6 md:hidden" id="testimonial-dots">
-                <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-                <span class="w-2 h-2 rounded-full bg-gray-300"></span>
-                <span class="w-2 h-2 rounded-full bg-gray-300"></span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 8: FAQ -->
-    <section id="faq" class="py-16 sm:py-24 bg-white reveal">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-gray-900 mb-8 md:mb-12 text-center">Common questions.</h2>
-            
-            <div class="space-y-4">
-                <div class="border border-gray-200 rounded-2xl overflow-hidden faq-item bg-gray-50/50">
-                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none faq-btn">
-                        <span class="text-lg font-medium text-gray-900">What does a standard cleaning include?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-gray-500 transition-transform duration-300 icon" stroke-width="1.5"></i>
-                    </button>
-                    <div class="px-6 pb-5 hidden faq-content text-base text-gray-600 font-light leading-relaxed">
-                        Our standard cleaning includes sweeping &amp; vacuuming, dusting &amp; mopping, emptying trash, making the bed, cleaning mirrors, cleaning sinks &amp; faucets, cleaning appliances, and tidying up the whole house. We tailor the checklist to your needs during the initial consultation.
-                    </div>
-                </div>
-
-                <div class="border border-gray-200 rounded-2xl overflow-hidden faq-item bg-gray-50/50">
-                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none faq-btn">
-                        <span class="text-lg font-medium text-gray-900">What does a deep cleaning cover?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-gray-500 transition-transform duration-300 icon" stroke-width="1.5"></i>
-                    </button>
-                    <div class="px-6 pb-5 hidden faq-content text-base text-gray-600 font-light leading-relaxed">
-                        Our deep cleaning goes beyond the surface and covers every inch of your bedrooms, living areas, kitchens, and bathroom. It's perfect for move-in/move-out, seasonal refreshes, or when your space needs extra attention.
-                    </div>
-                </div>
-
-                <div class="border border-gray-200 rounded-2xl overflow-hidden faq-item bg-gray-50/50">
-                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none faq-btn">
-                        <span class="text-lg font-medium text-gray-900">What scheduling options are available?</span>
-                        <i data-lucide="plus" class="w-5 h-5 text-gray-500 transition-transform duration-300 icon" stroke-width="1.5"></i>
-                    </button>
-                    <div class="px-6 pb-5 hidden faq-content text-base text-gray-600 font-light leading-relaxed">
-                        We offer flexible scheduling to suit your needs: one-time cleaning for special occasions, weekly cleaning for consistent upkeep, bi-weekly cleaning for balanced maintenance, and monthly cleaning for light touch-ups. Choose what works best for you.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 9: Final CTA -->
-    <section class="py-16 sm:py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-blue-600 -z-20"></div>
-        <div class="absolute inset-0 opacity-10 -z-10 dot-pattern"></div>
-        
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
-            <div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-8 border border-white/20">
-                <i data-lucide="sparkles" class="w-8 h-8 text-yellow-300" stroke-width="1.5"></i>
-            </div>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-6">Ready for a <span class="font-serif-custom italic font-normal text-yellow-300">spotless home?</span></h2>
-            <p class="text-base sm:text-lg md:text-xl text-blue-100 font-light mb-10 max-w-2xl mx-auto">
-                Get a free, no-obligation quote and see how AGTOPS can transform your space today.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="#" onclick="openQuoteModal(); return false;" class="px-8 py-4 rounded-full bg-yellow-400 text-gray-900 text-lg font-medium hover:bg-yellow-300 transition-colors w-full sm:w-auto">
-                    Get your free quote
-                </a>
-                <a href="tel:1-800-AGTOPS" class="px-8 py-4 rounded-full border border-white/30 text-white text-lg font-medium hover:bg-white/10 transition-colors w-full sm:w-auto flex items-center justify-center">
-                    <i data-lucide="phone" class="w-5 h-5 mr-2" stroke-width="1.5"></i> Call us now
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 pt-20 pb-10 text-gray-400 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-8 mb-16">
-                <!-- Brand col -->
-                <div class="col-span-2 md:col-span-3 lg:col-span-2">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="relative w-8 h-8 flex flex-col items-center justify-center">
-                            <div class="w-6 h-6 bg-yellow-400 rounded-full absolute top-0 z-10"></div>
-                            <div class="w-4 h-4 bg-white rotate-45 absolute bottom-0 z-0"></div>
-                        </div>
-                        <div class="flex flex-col leading-none">
-                            <span class="text-lg font-semibold tracking-tight text-white">AGTOPS</span>
-                            <span class="text-xs font-medium tracking-widest text-blue-400 uppercase mt-0.5">Cleaning</span>
-                        </div>
-                    </div>
-                    <p class="text-base font-light mb-6 max-w-sm">
-                        Professional cleaning services for homes and businesses. We deliver spotless results with eco-friendly products and a satisfaction guarantee.
+    <footer class="border-t border-zinc-900 bg-zinc-950 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
+                
+                <div class="md:col-span-2">
+                    <a href="#" class="text-xl font-medium tracking-tighter text-zinc-100 flex items-center gap-1 mb-4">
+                        <iconify-icon icon="solar:layers-linear" style="stroke-width: 1.5;"></iconify-icon>
+                        STDO.
+                    </a>
+                    <p class="text-sm text-zinc-400 max-w-sm mb-6">
+                        A specialized digital agency focused on building high-performance web experiences, technical SEO, and business automation.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors text-white">
-                            <i data-lucide="twitter" class="w-5 h-5" stroke-width="1.5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors text-white">
-                            <i data-lucide="instagram" class="w-5 h-5" stroke-width="1.5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors text-white">
-                            <i data-lucide="facebook" class="w-5 h-5" stroke-width="1.5"></i>
-                        </a>
+                    <div class="flex items-center gap-4 text-zinc-500">
+                        <a href="#" class="hover:text-zinc-100 transition-colors"><iconify-icon icon="solar:letter-linear" class="text-xl"></iconify-icon></a>
+                        <a href="#" class="hover:text-zinc-100 transition-colors"><iconify-icon icon="solar:map-point-linear" class="text-xl"></iconify-icon></a>
                     </div>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-medium mb-6 tracking-tight">Services</h4>
-                    <ul class="space-y-4 text-base font-light">
-                        <li><a href="#" class="hover:text-white transition-colors">Home Cleaning</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Office Cleaning</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Deep Cleaning</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Move In/Out</a></li>
+                <div class="">
+                    <h4 class="text-sm font-medium text-zinc-100 mb-4">Services</h4>
+                    <ul class="space-y-3 text-sm text-zinc-400">
+                        <li><a href="#" class="hover:text-zinc-100 transition-colors">Web Development</a></li>
+                        <li class=""><a href="#" class="hover:text-zinc-100 transition-colors">Landing Pages</a></li>
+                        <li class=""><a href="#" class="hover:text-zinc-100 transition-colors">Technical SEO</a></li>
+                        <li><a href="#" class="hover:text-zinc-100 transition-colors">n8n Automation</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="text-white font-medium mb-6 tracking-tight">Company</h4>
-                    <ul class="space-y-4 text-base font-light">
-                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+
+                <div class="">
+                    <h4 class="text-sm font-medium text-zinc-100 mb-4">Company</h4>
+                    <ul class="space-y-3 text-sm text-zinc-400">
+                        <li class=""><a href="#" class="hover:text-zinc-100 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-zinc-100 transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-zinc-100 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-zinc-100 transition-colors">Blog</a></li>
                     </ul>
                 </div>
+
                 <div>
-                    <h4 class="text-white font-medium mb-6 tracking-tight">Support</h4>
-                    <ul class="space-y-4 text-base font-light">
-                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Satisfaction Guarantee</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Referral Program</a></li>
+                    <h4 class="text-sm font-medium text-zinc-100 mb-4">Legal</h4>
+                    <ul class="space-y-3 text-sm text-zinc-400">
+                        <li><a href="#" class="hover:text-zinc-100 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-zinc-100 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-zinc-100 transition-colors">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm font-light">&copy; 2024 AGTOPS Cleaning Services. All rights reserved.</p>
-                <div class="flex space-x-6 text-sm font-light">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            <div class="pt-8 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+                <p class="">© 2024 Studio Agency. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <span>Designed for scale.</span>
+                    <span class="flex h-1.5 w-1.5 rounded-full bg-emerald-500/50"></span>
+                    <span>Systems Operational</span>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp -->
-    <div class="whatsapp-float">
-        <div id="wa-chat" class="whatsapp-chat">
-            <div class="chat-header">
-                <div class="avatar">
-                    <i data-lucide="message-circle" class="w-5 h-5" stroke-width="1.5"></i>
-                </div>
-                <div class="info">
-                    <h4>AGTOPS Cleaning</h4>
-                    <span>Typically replies within 1 hour</span>
-                </div>
-            </div>
-            <div class="chat-body">
-                <div class="bubble">
-                    Hello! 👋 I'm the AGTOPS bot. You can reach out to our agent here to get a free quote or ask any questions.
-                    <span class="time">Just now</span>
-                </div>
-            </div>
-            <div class="chat-footer">
-                <a href="https://wa.me/2348176620816" target="_blank" rel="noopener">
-                    <i data-lucide="message-circle" class="w-5 h-5" stroke-width="1.5"></i>
-                    Chat with agent
-                </a>
-            </div>
-        </div>
-        <button id="wa-toggle" class="wa-btn" onclick="toggleWhatsApp()">
-            <i data-lucide="message-circle" class="w-6 h-6" stroke-width="1.5"></i>
-            <div class="pulse"></div>
-        </button>
-    </div>
-
-    <!-- Quote Modal -->
-    <div id="quote-modal" class="quote-modal">
-        <div class="modal-overlay" onclick="closeQuoteModal()"></div>
-        <div class="modal-content">
-            <button onclick="closeQuoteModal()" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors" style="position:absolute;top:0.75rem;right:0.75rem;">
-                <i data-lucide="x" class="w-3.5 h-3.5" stroke-width="2"></i>
-            </button>
-            <div class="flex items-center gap-2.5 mb-4">
-                <div class="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
-                    <i data-lucide="sparkles" class="w-4 h-4 text-blue-600" stroke-width="1.5"></i>
-                </div>
-                <div>
-                    <h3 class="text-base font-medium text-gray-900">Get a Free Quote</h3>
-                    <p class="text-xs text-gray-500">We'll get back to you within 24 hours</p>
-                </div>
-            </div>
-            <form id="quote-form" onsubmit="handleQuoteSubmit(event)">
-                <div class="space-y-2.5">
-                    <div>
-                        <label class="text-[11px] font-medium text-gray-400 px-0.5">Full Name</label>
-                        <input type="text" name="name" required placeholder="John Doe" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
-                    </div>
-                    <div>
-                        <label class="text-[11px] font-medium text-gray-400 px-0.5">WhatsApp Number</label>
-                        <input type="tel" name="phone" required placeholder="+234 800 000 0000" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
-                    </div>
-                    <div>
-                        <label class="text-[11px] font-medium text-gray-400 px-0.5">Address / Location</label>
-                        <input type="text" name="address" required placeholder="Your address or area" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
-                    </div>
-                    <div>
-                        <label class="text-[11px] font-medium text-gray-400 px-0.5">Service</label>
-                        <select name="service" required class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
-                            <option value="">Select a service...</option>
-                            <option value="standard">Standard Cleaning</option>
-                            <option value="deep">Deep Cleaning</option>
-                            <option value="one-time">One-time Cleaning</option>
-                            <option value="weekly">Weekly Cleaning</option>
-                            <option value="bi-weekly">Bi-weekly Cleaning</option>
-                            <option value="monthly">Monthly Cleaning</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="text-[11px] font-medium text-gray-400 px-0.5">Preferred Date</label>
-                        <input type="date" name="date" required class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
-                    </div>
-                </div>
-                <button type="submit" class="w-full mt-4 py-2.5 rounded-full bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
-                    Send Request
-                    <i data-lucide="send" class="w-3.5 h-3.5" stroke-width="1.5"></i>
-                </button>
-            </form>
-            <div id="quote-success" class="hidden text-center py-4">
-                <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
-                    <i data-lucide="check-circle-2" class="w-6 h-6 text-green-600" stroke-width="1.5"></i>
-                </div>
-                <h4 class="text-sm font-medium text-gray-900 mb-1">Request Sent!</h4>
-                <p class="text-xs text-gray-500">We'll reach out to you on WhatsApp within 24 hours. Thank you for choosing AGTOPS!</p>
-                <button onclick="closeQuoteModal()" class="mt-4 px-5 py-2 rounded-full bg-gray-900 text-white text-xs font-medium hover:bg-gray-800 transition-colors">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Interactive Scripts -->
-    <script>
-        // Counter Animation
-        function animateCounter(el) {
-            const target = parseFloat(el.dataset.target);
-            const precision = parseInt(el.dataset.precision) || 0;
-            const duration = 2000;
-            const startTime = performance.now();
-
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                const current = eased * target;
-                el.textContent = precision > 0 ? (current / Math.pow(10, precision)).toFixed(precision) : Math.round(current).toLocaleString();
-                if (progress < 1) requestAnimationFrame(update);
-            }
-            requestAnimationFrame(update);
-        }
-
-        // Intersection Observer for Counters + Scroll Reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-
-                    // Trigger counters inside this element
-                    entry.target.querySelectorAll('.counter').forEach(c => {
-                        if (!c.dataset.animated) {
-                            c.dataset.animated = 'true';
-                            animateCounter(c);
-                        }
-                    });
-
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-
-        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => observer.observe(el));
-
-        // Quote Modal
-        function openQuoteModal() {
-            document.getElementById('quote-modal').classList.add('open');
-            document.getElementById('quote-form').reset();
-            document.getElementById('quote-form').style.display = 'block';
-            document.getElementById('quote-success').classList.add('hidden');
-            document.body.style.overflow = 'hidden';
-            lucide.createIcons();
-        }
-
-        function closeQuoteModal() {
-            document.getElementById('quote-modal').classList.remove('open');
-            document.body.style.overflow = '';
-        }
-
-        function handleQuoteSubmit(e) {
-            e.preventDefault();
-            const form = e.target;
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-
-            // Build WhatsApp message
-            const serviceLabels = { standard:'Standard Cleaning', deep:'Deep Cleaning', 'one-time':'One-time Cleaning', weekly:'Weekly Cleaning', 'bi-weekly':'Bi-weekly Cleaning', monthly:'Monthly Cleaning' };
-            const message = `Hello AGTOPS! I'd like a cleaning quote.%0A%0A*Name:* ${encodeURIComponent(data.name)}%0A*WhatsApp:* ${encodeURIComponent(data.phone)}%0A*Address:* ${encodeURIComponent(data.address)}%0A*Service:* ${encodeURIComponent(serviceLabels[data.service] || data.service)}%0A*Preferred Date:* ${encodeURIComponent(data.date)}`;
-
-            const whatsappUrl = `https://wa.me/2348176620816?text=${message}`;
-
-            form.style.display = 'none';
-            document.getElementById('quote-success').classList.remove('hidden');
-            lucide.createIcons();
-
-            setTimeout(() => window.open(whatsappUrl, '_blank'), 1500);
-        }
-
-        // Floating WhatsApp Toggle
-        function toggleWhatsApp() {
-            const chat = document.getElementById('wa-chat');
-            const btn = document.getElementById('wa-toggle');
-            chat.classList.toggle('open');
-            btn.querySelector('i').setAttribute('data-lucide', chat.classList.contains('open') ? 'x' : 'message-circle');
-            lucide.createIcons();
-        }
-
-        lucide.createIcons();
-
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('shadow-sm');
-                navbar.classList.replace('bg-white/80', 'bg-white/95');
-            } else {
-                navbar.classList.remove('shadow-sm');
-                navbar.classList.replace('bg-white/95', 'bg-white/80');
-            }
-        });
-
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        let menuOpen = false;
-
-        function toggleMenu() {
-            menuOpen = !menuOpen;
-            if (menuOpen) {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('flex');
-                document.body.style.overflow = 'hidden';
-                mobileBtn.innerHTML = '<i data-lucide="x" class="w-5 h-5" stroke-width="1.5"></i>';
-            } else {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
-                document.body.style.overflow = '';
-                mobileBtn.innerHTML = '<i data-lucide="menu" class="w-5 h-5" stroke-width="1.5"></i>';
-            }
-            lucide.createIcons();
-        }
-
-        mobileBtn.addEventListener('click', toggleMenu);
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if(menuOpen) toggleMenu();
-            });
-        });
-
-        const faqBtns = document.querySelectorAll('.faq-btn');
-        faqBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const content = btn.nextElementSibling;
-                const icon = btn.querySelector('.icon');
-                const isExpanded = !content.classList.contains('hidden');
-
-                document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
-                document.querySelectorAll('.faq-btn .icon').forEach(i => {
-                    i.classList.remove('rotate-45');
-                    i.classList.add('text-gray-500');
-                    i.classList.remove('text-gray-900');
-                });
-                document.querySelectorAll('.faq-item').forEach(item => item.classList.replace('bg-white', 'bg-gray-50/50'));
-
-                if (!isExpanded) {
-                    content.classList.remove('hidden');
-                    icon.classList.add('rotate-45');
-                    icon.classList.remove('text-gray-500');
-                    icon.classList.add('text-gray-900');
-                    btn.closest('.faq-item').classList.replace('bg-gray-50/50', 'bg-white');
-                }
-            });
-        });
-
-        const pricingData = {
-            standard: [
-                { label: 'Studio / 1-Bedroom', priceMin: 15000, priceMax: 25000 },
-                { label: '2-Bedroom', priceMin: 25000, priceMax: 40000 },
-                { label: '3-Bedroom', priceMin: 35000, priceMax: 50000 },
-                { label: '4-Bedroom', priceMin: 45000, priceMax: 65000 },
-                { label: 'Duplex', priceMin: 65000, priceMax: 90000 },
-                { label: 'Large Estate', priceMin: 90000, priceMax: 140000 },
-            ],
-            deep: [
-                { label: 'Studio / 1-Bedroom', priceMin: 25000, priceMax: 40000 },
-                { label: '2-Bedroom', priceMin: 40000, priceMax: 60000 },
-                { label: '3-Bedroom', priceMin: 60000, priceMax: 85000 },
-                { label: '4-Bedroom', priceMin: 85000, priceMax: 120000 },
-                { label: 'Duplex', priceMin: 120000, priceMax: 170000 },
-                { label: 'Large Estate', priceMin: 170000, priceMax: 250000 },
-            ]
-        };
-
-        const slider = document.getElementById('prop-slider');
-        const sliderFill = document.getElementById('slider-fill');
-        const sliderThumb = document.getElementById('slider-thumb');
-        const typeDisplay = document.getElementById('type-display');
-        const cleanType = document.getElementById('clean-type');
-        const estPrice = document.getElementById('est-price');
-
-        function updatePricing() {
-            const val = parseInt(slider.value);
-            const idx = val - 1;
-            const type = cleanType.value;
-            const prop = pricingData[type][idx];
-            const min = parseInt(slider.min);
-            const max = parseInt(slider.max);
-            const percentage = ((val - min) / (max - min)) * 100;
-            
-            sliderFill.style.width = `${percentage}%`;
-            sliderThumb.style.left = `${percentage}%`;
-            
-            typeDisplay.textContent = prop.label;
-            estPrice.textContent = `₦${prop.priceMin.toLocaleString()} - ₦${prop.priceMax.toLocaleString()}`;
-        }
-
-        slider.addEventListener('input', updatePricing);
-        cleanType.addEventListener('change', updatePricing);
-
-        updatePricing();
-
-        // Testimonial auto carousel (mobile only)
-        (function() {
-            const track = document.getElementById('testimonial-track');
-            const dots = document.querySelectorAll('#testimonial-dots span');
-            if (!track || window.innerWidth >= 768) return;
-            const items = track.querySelectorAll('.testimonial-item');
-            if (items.length < 2) return;
-            let index = 0;
-            let interval = setInterval(autoScroll, 3000);
-
-            function autoScroll() {
-                index = (index + 1) % items.length;
-                items[index].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
-                updateDots();
-            }
-
-            function updateDots() {
-                dots.forEach((d, i) => d.className = i === index ? 'w-2 h-2 rounded-full bg-blue-600' : 'w-2 h-2 rounded-full bg-gray-300');
-            }
-
-            track.addEventListener('scroll', () => {
-                let closest = 0;
-                let minDist = Infinity;
-                items.forEach((item, i) => {
-                    const dist = Math.abs(item.getBoundingClientRect().left - track.getBoundingClientRect().left);
-                    if (dist < minDist) { minDist = dist; closest = i; }
-                });
-                if (closest !== index) { index = closest; updateDots(); }
-            });
-
-            track.addEventListener('touchstart', () => clearInterval(interval));
-            track.addEventListener('touchend', () => { interval = setInterval(autoScroll, 3000); });
-        })();
-    </script>
 
 </body></html>
